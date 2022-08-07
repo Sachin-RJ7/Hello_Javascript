@@ -512,3 +512,22 @@ person.fullName.apply(person1, ["Oslo", "Norway"]);
 // output : Sachin Kumar,Oslo,Norway
 */
 
+//💡 prototype
+let animal = {
+  eats: true
+};
+let rabbit = {
+  jumps: true
+};
+
+rabbit.__proto__ = animal; 
+
+// we can find both properties in rabbit now:
+console.log( rabbit.eats ); // true 
+console.log( rabbit.jumps ); // true
+// Explanation
+// Here we can say that "animal is the prototype of rabbit" or "rabbit prototypically inherits from animal".
+
+// So if animal has a lot of useful properties and methods, then they become automatically available in rabbit. Such properties are called “inherited”.
+
+// If we have a method in animal, it can be called on rabbit:
