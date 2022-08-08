@@ -545,4 +545,4 @@ function Person(name, lastname, running) {
 }
 
 let user = new Person("Sachin", "kumar", "running");
-console.log(user.hobby());
+console.log(user.name);
