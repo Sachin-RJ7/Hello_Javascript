@@ -514,20 +514,35 @@ person.fullName.apply(person1, ["Oslo", "Norway"]);
 
 //💡 prototype
 let animal = {
-  eats: true
+  eats: true,
 };
 let rabbit = {
-  jumps: true
+  jumps: true,
 };
 
-rabbit.__proto__ = animal; 
+rabbit.__proto__ = animal;
 
 // we can find both properties in rabbit now:
-console.log( rabbit.eats ); // true 
-console.log( rabbit.jumps ); // true
+console.log(rabbit.eats); // true
+console.log(rabbit.jumps); // true
+
 // Explanation
 // Here we can say that "animal is the prototype of rabbit" or "rabbit prototypically inherits from animal".
 
 // So if animal has a lot of useful properties and methods, then they become automatically available in rabbit. Such properties are called “inherited”.
 
 // If we have a method in animal, it can be called on rabbit:
+
+//💡 Constructors
+
+function Person(name, lastname, running) {
+  this.name = name,
+    this.lastname = lastname,
+    this.playing = running,
+    this.hobby = function () {
+      console.log(`My hobby is ${this.playing}`);
+    }
+}
+
+let user = new Person("Sachin", "kumar", "running");
+console.log(user.hobby());
